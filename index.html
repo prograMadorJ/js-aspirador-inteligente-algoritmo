@@ -1,0 +1,111 @@
+<div id="app"></div>
+<hr />
+<pre>
+  <h1>Pseudo Algoritmo</h1>
+  dimensaoX = 0
+  dimensaoY = 0
+  x = 0
+  y = 0
+  orientacaoAtual = inicializa com vai para NORTE
+  
+  funcao acrescentar uma unidade de deslocamento para Frente 'F' () {
+  
+    se orientacaoAtual estiver para NORTE e Y < dimensaoY, então    exemplo: [dimensaoY = 10 então y = 0 até 9 ]
+      calculo =  y + 1
+      se calculo > 0, então
+        y = calculo
+  
+    se não, se orientacaoAtual estiver para SUL e Y > 0 e Y < dimensaoY, então   exemplo: [dimensaoY = 10 então y = 1 até 9 ]
+      calculo =  y - 1
+      se calculo > 0, então
+        y = calculo
+  
+    se não, se orientacaoAtual estiver para LESTE e X < dimensaoX, então     exemplo: [dimensaoX = 10 então x = 0 até 9 ]
+      calculo =  x + 1
+      se calculo > 0, então
+        x = calculo
+  
+    se não, se orientacaoAtual estiver para OESTE e X > 0 e X < dimensaoX, então  exemplo: [dimensaoX = 10 então x = 1 até 9 ]
+      calculo =  x - 1
+      se calculo > 0, então
+        x = calculo
+  }
+  
+  funcao acrescentar uma unidade de deslocamento para Atras 'T' () {
+    se orientacaoAtual estiver para NORTE e Y > 0 e Y < dimensaoY, então     exemplo: [dimensaoY = 10 então y = 1 até 9 ]
+      calculo =  y - 1
+      se calculo > 0, então
+        y = calculo
+  
+    se não, se orientacaoAtual estiver para SUL e Y < dimensaoY, então     exemplo: [dimensaoY = 10 então y = 0 até 9 ]
+      calculo =  y + 1
+      se calculo > 0, então
+        y = calculo
+  
+    se não, se orientacaoAtual estiver para LESTE e X > 0 e X < dimensaoX, então      exemplo: [dimensaoX = 10 então x = 1 até 9 ]
+      calculo =  x - 1
+      se calculo > 0, então
+        x = calculo
+  
+    se não, se orientacaoAtual estiver para OESTE e X < dimensaoX, então      exemplo: [dimensaoX = 10 então x = 0 até 9 ]
+      calculo =  x + 1
+      se calculo > 0, então
+        x = calculo
+  }
+  
+  
+  funcao obter orientacao quando girar para Direita 'D' () {
+  
+    se orientacaoAtual estiver para NORTE, então
+       orientacaoAtual = vai passar a ir para LESTE
+  
+    se não, se orientacaoAtual estiver para SUL, então
+       orientacaoAtual = vai passar a ir para OESTE
+  
+    se não, se orientacaoAtual estiver para LESTE, então
+      orientacaoAtual = vai passar a ir para SUL
+  
+    se não, se orientacaoAtual estiver para OESTE, então
+       orientacaoAtual = vai passar a ir para NORTE
+  }
+
+  funcao obter orientacao quando girar para Esquerda 'E' () {
+  
+    se orientacaoAtual estiver para NORTE, então
+      orientacaoAtual = vai passar a ir para OESTE
+  
+    se não, se orientacaoAtual estiver para SUL, então
+      orientacaoAtual = vai passar a ir para LESTE
+  
+    se não, se orientacaoAtual estiver para LESTE, então
+      orientacaoAtual = vai passar a ir para NORTE
+  
+    se não, se orientacaoAtual estiver para OESTE, então
+      orientacaoAtual = vai passar a ir para SUL
+  
+  } 
+
+  função movimentar robo conforme deslocamento (deslocamento) {
+    se deslocamento for para Frente 'F', então
+      deve executar a funcao acrescentar uma unidade de deslocamento para Frente 'F' (orientacaoAtual)
+  
+    se não, se deslocamento for para Atras 'T', então
+      deve executar a funcao acrescentar uma unidade de deslocamento para Atras 'T' (orientacaoAtual)
+  
+   se não, se deslocamento for girar para Direita 'D', então
+       deve executar a funcao obter orientacao quando girar para Direita 'D' (orientacaoAtual)
+  
+    se não, se deslocamento for girar para Esquerda 'E', então
+       deve executar a funcao obter orientacao quando girar para Esquerda 'E' (orientacaoAtual)
+  }
+  
+  entrada
+    deslocamentos = 'FFFFFFFFFDFFFFFFFFFDFFFFFFFFFDFFFFFFFFF'
+  
+  para cada deslocamento dos deslocamentos faça {
+      movimento(deslocamento)
+  }
+  
+  saida
+    printar orientacaoAtual x y
+</pre>
